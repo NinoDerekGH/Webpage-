@@ -203,9 +203,9 @@
                             <a href="view.php?index=<?php echo $t;?>" class="small-thumbnail"><img src=<?php echo $arr_[$t][3] ;?>>
                             </a>
                         <div class="vid-info">
-                            <p><?php echo $arr_[$t][1] ;?></p>
-                            <p><?php echo $arr_[$t][2] ;?></p>
-                            <p>15M Views</p>
+                            <p style="font-weight:750;color:#fff;"><?php echo $arr_[$t][1] ;?></p>
+                            <p style="font-weight:100;font-size:13px;color:#717171;"><?php echo $arr_[$t][2] ;?> <br> 15M Views</p>
+                            
                         </div>
                 </div>
                     <?php }
