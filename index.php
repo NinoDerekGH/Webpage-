@@ -104,37 +104,39 @@
   </section>
   <main>
     <section class="video_content grid">
-      <div class="video_items">
-        <a href="view.html">
-          <img src="images/video_images/1.png" alt="">
-        </a>
-        <div class="details flex">
-          <div class="img">
-            <img src="images/logo.png" alt="">
-          </div>
-          <div class="heading">
-            <p>How to make Animation using Mouse ......</p>
-            <span>NJmixerPH <i class="fa fa-circle-check"></i> </span>
-            <span>100.7M .1 Week ago</span>
-          </div>
-        </div>
-      </div>
+  
+      <?php 
+      include('php/links.inc.php'); // $data(array from txtfile),$arr_(2d array of $data)
 
-      <div class="video_items">
-        <a href="view.html">
-          <img src="images/video_images/2.jpg" alt="">
-        </a>
-        <div class="details flex">
-          <div class="img">
-            <img src="images/logo.png" alt="">
+      for($i = 0; $i<count($data)-1;$i++){
+        $vid= $arr_[$i][0];
+        $ttl= $arr_[$i][1];
+        $ch= $arr_[$i][2];
+        $chpic = $arr_[$i][4];
+        $pic= $arr_[$i][3];
+
+      
+      
+      if(true){?>
+        <div class="video_items">
+          <a href='view.php?index=<?php echo $i;?>'>
+            <img src=<?php echo $pic;?> alt="">
+          
+          <div class="details flex">
+            <div class="img">
+              <img src=<?php echo $chpic;?> alt="">
+            </div>
+            <div class="heading">
+              <p><?php echo $ttl;?></p>
+              <span><?php echo $ch;?> <i class="fa fa-circle-check"></i> </span>
+              <span>100000.7M .1 Week ago</span>
+            </div>
           </div>
-          <div class="heading">
-            <p>How to make handsome Human......</p>
-            <span>NJmixerPH <i class="fa fa-circle-check"></i> </span>
-            <span>100000.7M .1 Week ago</span>
-          </div>
+          </a>
         </div>
-      </div>
+        <?php } 
+      } ?>
+
     </section>
   </main>
 

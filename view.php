@@ -45,13 +45,13 @@
                     <i class="fa-solid fa-bars nav_icon"></i>
                     <span class="logo_name">
                         <i class="fab fa-maxcdn"></i>
-                        ixer
+                        
                     </span>
                 </a>
 
                 <div class="nav_list">
                     <div class="nav_items navtop">
-                        <a href="index.html" class="nav_link navtop active">
+                        <a href="index.php" class="nav_link navtop active">
                             <i class="fa fa-house nav_icon"></i>
                             <span class="nav_name">Home</span>
                         </a>
@@ -106,13 +106,24 @@
     <div class="container play-container">
         <div class="row">
             <div class="play-video">
-                <video controls autoplay>
-                    <source src="images/test.mp4" type="video/mp4">
-                </video>
+                <?php
+                include('php/links.inc.php'); // $data(array from txtfile),$arr_(2d array of $data)
+                ?>
+                <?php
+                
+                $i = $_GET['index'];//index
+                $vid= $arr_[$i][0];
+                $ttl= $arr_[$i][1];
+                $ch= $arr_[$i][2];
+                $chpic = $arr_[$i][4];
+                $pic= $arr_[$i][3];
+
+                ?>
+                <iframe src="https://www.youtube.com/embed/<?php echo $vid; ?>?&rel=1&playlist=<?php echo $vid?>&loop=1" allow="autoplay"frameborder="0" ></iframe>
                 <div class="tags">
                     <a href="#">#Technoblade</a> <a href="#">#RestInPeace</a>
                 </div>
-                <h3>Technoblade</h3>
+                <h3><?php echo $ttl;?></h3>
                 <div class="play-video-info">
                     <p>5,548,101 views &bull; July 7, 2022</p>
                     <div>
@@ -124,9 +135,9 @@
                 </div>
                 <hr>
                 <div class="publisher">
-                    <img src="http://unsplash.it/36/36?gravity=center">
+                    <img src=<?php echo $chpic;?>>
                     <div>
-                        <p>SAD-ist</p>
+                        <p><?php echo $ch;?></p>
                         <span>2.79M subscribers</span>
                     </div>
                     <button type="button">Subscribe</button>
@@ -182,35 +193,26 @@
 
             </div>
             <div class="right-sidebar">
-                <div class="side-video-list">
-                    <a href=" class=" small-thumbnail"><img src="http://unsplash.it/250/150?gravity=center">
-                    </a>
-                    <div class="vid-info">
-                        <a href="#">Random Video</a>
-                        <p>Sample Name</p>
-                        <p>15M Views</p>
-                    </div>
-                </div>
 
-                <div class="side-video-list">
-                    <a href=" class=" small-thumbnail"><img src="http://unsplash.it/250/150?gravity=center">
-                    </a>
-                    <div class="vid-info">
-                        <a href="#">Random Video</a>
-                        <p>Sample Name</p>
-                        <p>15M Views</p>
-                    </div>
-                </div>
+                 <?php for($t=0;$t<count($data)-1;$t++){
 
-                <div class="side-video-list">
-                    <a href=" class=" small-thumbnail"><img src="http://unsplash.it/250/150?gravity=center">
-                    </a>
-                    <div class="vid-info">
-                        <a href="#">Random Video</a>
-                        <p>Sample Name</p>
-                        <p>15M Views</p>
-                    </div>
+
+
+                    if($i!=$t){?>
+                        <div class="side-video-list">
+                            <a href="view.php?index=<?php echo $t;?>" class="small-thumbnail"><img src=<?php echo $arr_[$t][3] ;?>>
+                            </a>
+                        <div class="vid-info">
+                            <p><?php echo $arr_[$t][1] ;?></p>
+                            <p><?php echo $arr_[$t][2] ;?></p>
+                            <p>15M Views</p>
+                        </div>
                 </div>
+                    <?php }
+                 }?>   
+                
+ 
+               
             </div>
         </div>
     </div>
