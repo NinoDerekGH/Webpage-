@@ -129,6 +129,7 @@
             <div class="heading">
               <p><?php echo $ttl;?></p>
               <span><?php echo $ch;?> <i class="fa fa-circle-check"></i> </span>
+              <br>
               <span>100000.7M .1 Week ago</span>
             </div>
           </div>
