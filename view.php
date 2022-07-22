@@ -194,7 +194,7 @@
             </div>
             <div class="right-sidebar">
 
-                 <?php for($t=0;$t<count($data)-1;$t++){
+                 <?php for($t=0;$t<count($data);$t++){
 
 
 

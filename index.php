@@ -108,14 +108,14 @@
       <?php 
       include('php/links.inc.php'); // $data(array from txtfile),$arr_(2d array of $data)
 
-      for($i = 0; $i<count($data)-1;$i++){
+      for($i = 0; $i<count($data);$i++){
         $vid= $arr_[$i][0];
         $ttl= $arr_[$i][1];
         $ch= $arr_[$i][2];
         $chpic = $arr_[$i][4];
         $pic= $arr_[$i][3];
 
-      
+        
       
       if(true){?>
         <div class="video_items">
