@@ -1,4 +1,5 @@
- const showMenu = (headerToggle, navbarId) => {
+-------{Jelard]----------
+const showMenu = (headerToggle, navbarId) => {
    const toggleBtn = document.getElementById(headerToggle),
      nav = document.getElementById(navbarId)
 
