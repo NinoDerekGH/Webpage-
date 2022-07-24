@@ -77,7 +77,7 @@
               <span class="nav_name">History</span>
             </a>
             <a href="je.html" class="nav_link navtop">
-              <i class="fa-solid fa-thumbs-up nav_icon"></i>
+              <i class="fa-brands fa-yandex nav_icon"></i>
               <span class="nav_name">Register</span>
             </a>
 
