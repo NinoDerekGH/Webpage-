@@ -16,11 +16,16 @@
   <header class="header">
     <div class="header_container">
       <div class="none"> </div>
-      <div class="search">
-        <input type="text" placeholder="Search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
 
+      <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <div class="search">
+          <!-- SEARCH -->
+          <input type="text" placeholder="Search" name="search"> 
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </form>
+      
+      
 
       <div class="user">
         <div class="icon">
@@ -52,7 +57,7 @@
 
         <div class="nav_list">
           <div class="nav_items navtop">
-            <a href="index.html" class="nav_link navtop active">
+            <a href="index.php" class="nav_link navtop active">
               <i class="fa fa-house nav_icon"></i>
               <span class="nav_name">Home</span>
             </a>
@@ -109,35 +114,102 @@
   
       <?php 
       include('php/links.inc.php'); // $data(array from txtfile),$arr_(2d array of $data)
+      if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $search = $_POST['search'];
+        $k=0;
 
-      for($i = 0; $i<count($data);$i++){
-        $vid= $arr_[$i][0];
-        $ttl= $arr_[$i][1];
-        $ch= $arr_[$i][2];
-        $chpic = $arr_[$i][4];
-        $pic= $arr_[$i][3];
 
-        
-      
-      if(true){?>
-        <div class="video_items">
-          <a href='view.php?index=<?php echo $i;?>'>
-            <img src=<?php echo $pic;?> alt="">
+        if($search == ""){
+          for($i = 0; $i<count($data);$i++){
+            $vid= $arr_[$i][0];
+            $ttl= $arr_[$i][1];
+            $ch= $arr_[$i][2];
+            $chpic = $arr_[$i][4];
+            $pic= $arr_[$i][3];
+    
+            
           
-          <div class="details flex">
-            <div class="img">
-              <img src=<?php echo $chpic;?> alt="">
+          if(true){?>
+            <div class="video_items">
+              <a href='view.php?index=<?php echo $i;?>'>
+                <img src=<?php echo $pic;?> alt="">
+              
+              <div class="details flex">
+                <div class="img">
+                  <img src=<?php echo $chpic;?> alt="">
+                </div>
+                <div class="heading">
+                  <p><?php echo $ttl;?></p>
+                  <span><?php echo $ch;?> <i class="fa fa-circle-check"></i> </span>
+                  <br>
+                  <span>100000.7M .1 Week ago</span>
+                </div>
+              </div>
+              </a>
             </div>
-            <div class="heading">
-              <p><?php echo $ttl;?></p>
-              <span><?php echo $ch;?> <i class="fa fa-circle-check"></i> </span>
-              <br>
-              <span>100000.7M .1 Week ago</span>
+            <?php } 
+    
+          }
+        }
+        if($search!=""){
+          foreach($data as $da){
+            if(stristr($da,$search)){
+              if(true){?>
+                <div class="video_items">
+                  <a href='view.php?idex=<?php echo $k;?>'>
+                    <img src=<?php echo $arr_[$k][3];?> alt="">
+                  
+                  <div class="details flex">
+                    <div class="img">
+                      <img src=<?php echo $arr_[$k][4];?> alt="">
+                    </div>
+                    <div class="heading">
+                      <p><?php echo $arr_[$k][1];?></p>
+                      <span><?php echo $arr_[$k][2];?> <i class="fa fa-circle-check"></i> </span>
+                      <br>
+                      <span>100000.7M .1 Week ago</span>
+                    </div>
+                  </div>
+                  </a>
+                </div>
+                <?php }
+              continue;
+            }
+            $k++;
+          }
+        }
+        
+      }else{
+        for($i = 0; $i<count($data);$i++){
+          $vid= $arr_[$i][0];
+          $ttl= $arr_[$i][1];
+          $ch= $arr_[$i][2];
+          $chpic = $arr_[$i][4];
+          $pic= $arr_[$i][3];
+  
+          
+        
+        if(true){?>
+          <div class="video_items">
+            <a href='view.php?index=<?php echo $i;?>'>
+              <img src=<?php echo $pic;?> alt="">
+            
+            <div class="details flex">
+              <div class="img">
+                <img src=<?php echo $chpic;?> alt="">
+              </div>
+              <div class="heading">
+                <p><?php echo $ttl;?></p>
+                <span><?php echo $ch;?> <i class="fa fa-circle-check"></i> </span>
+                <br>
+                <span>100000.7M .1 Week ago</span>
+              </div>
             </div>
+            </a>
           </div>
-          </a>
-        </div>
-        <?php } 
+          <?php } 
+  
+        }
       } ?>
 
     </section>
