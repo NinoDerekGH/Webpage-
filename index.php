@@ -109,11 +109,59 @@
     </nav>
   </section>
   <main>
-    <!-- -----Jelard-------- -->
+
+    <!-- Shorts -->
+    <section class="shorts">
+      <div class="container">
+        <div class="shorts_row">
+          <div class="shorts_column">
+            <img class="shorts" id="short_a" src="shorts/short_a.gif" alt="Trolling News">
+            <h5>Trolling News</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_b" src="shorts/short_b.gif" alt="Spooderman">
+            <h5>Spooderman</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_c" src="shorts/short_c.gif" alt="UNO...?">
+            <h5>UNO...?</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_d" src="shorts/short_d.gif" alt="Who are you!">
+            <h5>Who are you!</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_e" src="shorts/short_e.gif" alt="Drawing with Crayons">
+            <h5>Drawing with Crayons</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_f" src="shorts/short_f.gif" alt="mAtH tESt be like">
+            <h5>mAtH tESt be like</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_g" src="shorts/short_g.gif" alt="Pay to Remove Ads">
+
+            <h5>Pay to Remove Ads</h5>
+          </div>
+          <div class="shorts_column">
+            <img class="shorts" id="short_h" src="shorts/short_h.gif" alt="Doctor Strange">
+            <h5>Doctor Strange</h5>
+          </div>
+        </div>
+
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="pop">
+          <div id="caption"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Shorts -->
+
     <section class="video_content grid">
-  
       <?php 
       include('php/links.inc.php'); // $data(array from txtfile),$arr_(2d array of $data)
+<<<<<<< Updated upstream
       if($_SERVER["REQUEST_METHOD"]=="POST"){
         $search = $_POST['search'];
         $k=0;
@@ -128,6 +176,22 @@
             $pic= $arr_[$i][3];
     
             
+=======
+
+      for($i = 0; $i<count($data);$i++){
+        $vid= $arr_[$i][0];
+        $ttl= $arr_[$i][1];
+        $ch= $arr_[$i][2];
+        $chpic = $arr_[$i][4];
+        $pic= $arr_[$i][3];
+
+        
+      
+      if(true){?>
+        <div class="video_items" style="padding-left:35px; padding-bottom:20px">
+          <a href='view.php?index=<?php echo $i;?>'>
+            <img src=<?php echo $pic;?> alt="">
+>>>>>>> Stashed changes
           
           if(true){?>
             <div class="video_items">
@@ -215,8 +279,8 @@
     </section>
   </main>
 
-
   <script src="js/main.js" charset="utf-8"></script>
+
 </body>
 
 </html>
