@@ -5,13 +5,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/Register.css">
 </head>
 
 <body>
   <div class="wrapper">
     <h2>Login</h2>
-    <form action=<?php $_SERVER['PHP_SELF']?> method="post">
+    <form method="post" action="<?php $_SERVER['PHP_SELF']?>">
       
       <div class="input-box">
         <input type="text" placeholder="Enter your username or email" name ="uname" required>
@@ -29,12 +29,27 @@
     </form>
   </div>
     <?php 
-    $data=file('accs.txt');
-    $str = $data[0];
-    $exp1 = explode("\n",$str);
-   
-    unset($data);
-    $data=array();
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $data=file('accs.txt');
+        $str = $data[0];
+        $name = $_POST['uname'];
+        $pass = $_POST['pass'];
+        $exp1 = explode("\n",$str);
+        echo $name." ".$pass;
+        $i = 0;
+        foreach ($exp1 as $s){
+            
+           if(str_contains($s,$name) ==true && str_contains($s,$pass)==true){
+            header('Location: index.php');
+           }
+            $i++;
+        }
+       
+        unset($data);
+        $data=array();
+    }
+
+    
     ?>
 </body>
 

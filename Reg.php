@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/register.css">
 </head>
 
 <body>
@@ -54,18 +54,10 @@
     unset($acc_arr);
     $acc_arr= array();
     fclose($file);
+    
   }
   ?>
-  <script>
-    function toLoginBalert(){
-      if(confirm("Do you want to Login?")==true){
-        // <?php //header('Location:Log.php');
-        // exit; ?>
-      }else{
-
-      }
-    }
-  </script>
+  
 
 </body>
 
