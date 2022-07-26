@@ -159,25 +159,14 @@
     <!-- Shorts -->
 
     <section class="video_content grid">
-      <?php 
+    <?php 
       include('php/links.inc.php'); // $data(array from txtfile),$arr_(2d array of $data)
-<<<<<<< Updated upstream
       if($_SERVER["REQUEST_METHOD"]=="POST"){
         $search = $_POST['search'];
         $k=0;
 
 
         if($search == ""){
-          for($i = 0; $i<count($data);$i++){
-            $vid= $arr_[$i][0];
-            $ttl= $arr_[$i][1];
-            $ch= $arr_[$i][2];
-            $chpic = $arr_[$i][4];
-            $pic= $arr_[$i][3];
-    
-            
-=======
-
       for($i = 0; $i<count($data);$i++){
         $vid= $arr_[$i][0];
         $ttl= $arr_[$i][1];
@@ -191,7 +180,6 @@
         <div class="video_items" style="padding-left:35px; padding-bottom:20px">
           <a href='view.php?index=<?php echo $i;?>'>
             <img src=<?php echo $pic;?> alt="">
->>>>>>> Stashed changes
           
           if(true){?>
             <div class="video_items">
@@ -275,7 +263,6 @@
   
         }
       } ?>
-
     </section>
   </main>
 
