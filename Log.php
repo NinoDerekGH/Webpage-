@@ -35,10 +35,10 @@
         $name = $_POST['uname'];
         $pass = $_POST['pass'];
         $exp1 = explode("\n",$str);
-        echo $name." ".$pass;
+        // echo $name." ".$pass;
         $i = 0;
         foreach ($exp1 as $s){
-          echo $s;
+          // echo $s;
           if(str_contains($s,$name) && str_contains($s,$pass)){
             header('Location: index.php');
           }else{} 
