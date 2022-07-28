@@ -3,3 +3,4 @@ ArchieGwapo | ar@da.com | 21
 da | ada@da.co | 21
 jude | j@ude.com | sadsad
 Sample | sampleemail@sample.com | 12345
+MixerUser | mixeruser@gmail.com | 123
