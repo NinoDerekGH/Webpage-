@@ -35,9 +35,9 @@
 
         $name = $_POST['uname'];
         $pass = $_POST['pass'];
-        
+
         // echo $name." ".$pass;
-        print_r($data);
+        
         $i = 0;
         foreach ($data as $s){
           // echo $s;
