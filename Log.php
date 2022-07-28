@@ -31,13 +31,15 @@
     <?php 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-        $data=file('php/accs.txt');
-
+        
+        
         $name = $_POST['uname'];
         $pass = $_POST['pass'];
+        $file=fopen("php/accs.txt", "r") or die("Unable to open file!");
+        $str = fread($file,filesize('php/accs.txt'));
+        $data =explode('\n',$str);
 
         // echo $name." ".$pass;
-        
         $i = 0;
         foreach ($data as $s){
           // echo $s;
