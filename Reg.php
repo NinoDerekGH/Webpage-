@@ -49,7 +49,7 @@
     $acc_arr= array($uname,$email,$pass);
     // print_r($acc_arr);
     $acc_line = implode(" | ",$acc_arr);
-    $file = fopen("php/accs.txt","a");
+    $file = fopen('php/accs.txt','a');
     fwrite($file,$acc_line."\n");
     unset($acc_arr);
     $acc_arr= array();

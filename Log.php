@@ -30,7 +30,7 @@
   </div>
     <?php 
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $data=file('accs.txt');
+        $data=file('php/accs.txt');
         $str = $data[0];
         $name = $_POST['uname'];
         $pass = $_POST['pass'];
@@ -38,10 +38,10 @@
         echo $name." ".$pass;
         $i = 0;
         foreach ($exp1 as $s){
-            
-           if(str_contains($s,$name) ==true && str_contains($s,$pass)==true){
+          echo $s;
+          if(str_contains($s,$name) && str_contains($s,$pass)){
             header('Location: index.php');
-           }
+          }else{} 
             $i++;
         }
        
